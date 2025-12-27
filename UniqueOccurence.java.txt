@@ -1,0 +1,52 @@
+ class Solution {
+     public boolean uniqueOccurrences(int[] arr) {
+        int[] check = new int[arr.length];
+         int[] nums = new int[arr.length];
+         HashSet<Integer> set1 = new HashSet<>();
+         HashSet<Integer> set2 = new HashSet<>();
+
+         for(int i=0; i<arr.length; i++)
+         {
+             int count=0;
+             if(set1.contains(arr[i]))
+             {
+                 continue;
+             }
+             for(int j=i; j<arr.length; j++)
+             {
+                 if(arr[j] == arr[i])
+                 {
+                     count++;
+                 }                
+             }
+             if(set2.contains(count))
+             {
+                 return false;
+             }
+             else
+             {
+                 set2.add(count);
+             }
+              set1.add(arr[i]);
+         }
+         return true;
+     }
+ }
+
+
+
+// class Solution {
+//     public boolean uniqueOccurrences(int[] arr) {
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         for (int num : arr) {
+//             map.put(num, map.getOrDefault(num, 0) + 1);
+//         }
+//         HashSet<Integer> set = new HashSet<>();
+//         for (int count : map.values()) {
+//             if (!set.add(count)) {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// }
