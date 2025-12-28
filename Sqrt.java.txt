@@ -1,0 +1,18 @@
+// class Solution {
+//     public int mySqrt(int x) {
+//         int sq =(int) Math.sqrt(x);
+//         return sq;
+//     }
+// }
+
+class Solution {
+    public int mySqrt(int x) {
+        int rem=x;
+        int count =0;
+        for (int i=1;rem>=i;i+=2){
+            rem-=i;
+            count++;
+        }
+        return count;  
+    }
+}
