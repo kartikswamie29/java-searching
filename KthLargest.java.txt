@@ -1,0 +1,34 @@
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        Arrays.sort(nums);
+         return nums[nums.length - k];
+    }
+}
+
+
+
+// class Solution {
+//     public int findKthLargest(int[] nums, int k) {
+
+//         int max = Integer.MIN_VALUE;
+//         int index = -1;
+
+//         for (int i = 0; i < k; i++) {
+//             max = Integer.MIN_VALUE;
+
+//             for (int j = 0; j < nums.length; j++) {
+//                 if (nums[j] > max) {
+//                     max = nums[j];
+//                     index = j;
+//                 }
+//             }
+
+//             // Mark this element as used
+//             nums[index] = Integer.MIN_VALUE;
+//         }
+
+//         return max;
+//     }
+// }
+
+
